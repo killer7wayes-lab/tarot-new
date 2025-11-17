@@ -35,6 +35,70 @@ h3 {
   margin: 15px 0;
   color: var(--primary-color);
 }
+/* Additional CSS for full deck */
+.card-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.card-action-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  min-height: 44px;
+}
+
+.card-action-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.full-deck {
+  margin: 25px 0;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.deck-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.deck-card {
+  padding: 12px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.deck-card:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.deck-card.selected {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
 
 /* Theme Selector */
 .theme-selector {
