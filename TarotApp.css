@@ -1,0 +1,354 @@
+/* TarotApp.css */
+
+/* Mobile First Design */
+.tarot-app {
+  min-height: 100vh;
+  padding: 15px;
+  font-family: 'Georgia', serif;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: var(--primary-color);
+}
+
+/* Theme Selector */
+.theme-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.theme-btn {
+  padding: 12px 20px;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: currentColor;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  min-width: 100px;
+  transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+/* Meditation Section */
+.meditation-section {
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+}
+
+.breathing-animation {
+  margin: 30px 0;
+}
+
+.breath-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  margin: 0 auto 20px;
+  animation: breathe 4s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+@keyframes breathe {
+  0%, 100% { 
+    transform: scale(1); 
+    opacity: 0.7; 
+  }
+  50% { 
+    transform: scale(1.3); 
+    opacity: 1; 
+  }
+}
+
+.meditation-instructions {
+  margin: 25px 0;
+}
+
+.meditation-instructions p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.begin-reading-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  min-height: 50px;
+}
+
+.begin-reading-btn:hover {
+  transform: scale(1.05);
+  background: var(--accent-color);
+}
+
+/* Celtic Cross Layout */
+.celtic-cross-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.celtic-cross-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.cross-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cross-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-position {
+  width: 100px;
+  height: 150px;
+  border: 2px dashed var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Card Positions for Celtic Cross */
+.position-1 { grid-column: 2; grid-row: 2; } /* Center - Present */
+.position-2 { grid-column: 2; grid-row: 2; transform: rotate(90deg); } /* Cross - Challenge */
+.position-3 { grid-column: 2; grid-row: 3; } /* Foundation */
+.position-4 { grid-column: 1; grid-row: 2; } /* Past */
+.position-5 { grid-column: 2; grid-row: 1; } /* Crown */
+.position-6 { grid-column: 3; grid-row: 2; } /* Future */
+
+/* Card Selection */
+.card-selection {
+  margin: 30px 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.card-slot {
+  width: 100%;
+  height: 180px;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.card-slot:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.interpret-btn, .reset-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+  min-height: 50px;
+}
+
+.interpret-btn:hover:not(:disabled), .reset-btn:hover {
+  background: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.interpret-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Interpretation Result */
+.interpretation-result {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 15px;
+  margin: 25px 0;
+  backdrop-filter: blur(10px);
+  border-left: 4px solid var(--accent-color);
+}
+
+.interpretation-result p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+/* Theme Styles */
+.theme-classic {
+  --primary-color: #8B4513;
+  --secondary-color: #D2B48C;
+  --accent-color: #8B0000;
+  background: linear-gradient(135deg, #8B4513, #D2B48C);
+  color: #333;
+}
+
+.theme-goth {
+  --primary-color: #2C2C2C;
+  --secondary-color: #8A2BE2;
+  --accent-color: #FF00FF;
+  background: linear-gradient(135deg, #2C2C2C, #4B0082);
+  color: #FFFFFF;
+}
+
+.theme-anime {
+  --primary-color: #FF69B4;
+  --secondary-color: #9370DB;
+  --accent-color: #00BFFF;
+  background: linear-gradient(135deg, #FF69B4, #9370DB);
+  color: #000;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .tarot-app {
+    padding: 25px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .celtic-cross-layout {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .cross-center {
+    gap: 20px;
+  }
+  
+  .card-position {
+    width: 120px;
+    height: 180px;
+    font-size: 1rem;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  
+  .card-slot {
+    height: 200px;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .card-position {
+    width: 140px;
+    height: 210px;
+  }
+  
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
+  
+  .card-slot {
+    height: 220px;
+  }
+}
+
+/* Spread Selection */
+.spread-selection {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.spread-selection select {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  min-width: 200px;
+}
